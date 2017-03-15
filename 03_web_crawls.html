@@ -1,0 +1,133 @@
+<h1>Data Gathering Lecture</h1>
+
+<h2>Introduction</h2>
+
+<pre><code>* Topic of the Lecture is Data Gathering
+* Data Gathering From the Internet
+* Text Data Gathering from the Internet
+* Will go through: Wikidumps, CommonCrawl, Web Crawling
+</code></pre>
+
+<h2>The Data to be collected</h2>
+
+<pre><code>* Text Data
+* Should have a plain-text representation/version
+* The source and type of the data should be based on one's practicalities / interests
+</code></pre>
+
+<h2>Objectives of This Week</h2>
+
+<pre><code>* You will have a corpus
+* You know about webcrawling
+* Get dataset &amp; Learn web crawling
+* That's pretty much it!
+</code></pre>
+
+<h3>Other stuff one can learn here is:</h3>
+
+<pre><code>1. Processing wikipedia data, in its raw form. 
+2. Getting plain text out of various formats (html, pdf, etc.)
+3. Other methods for scraping data from the internet
+</code></pre>
+
+<h2>The Data Sources</h2>
+
+<h3>Wikimedia Data</h3>
+
+<pre><code>* Ready-made plain-text available at: http://linguatools.org/tools/corpora/wikipedia-monolingual-corpora/
+* Wikimedia database dumps can be found at: https://dumps.wikimedia.org/
+* Really nice and clean data
+* Has categories and order: https://en.wikipedia.org/wiki/Special:CategoryTree?target=Category%3AAlcoholic+drinks&amp;mode=pages&amp;namespaces=&amp;title=Special%3ACategoryTree
+* Has hyperlinks
+</code></pre>
+
+<h3>The common crawl</h3>
+
+<pre><code>* http://commoncrawl.org/
+* A non-profit foundation
+* Maintains a publicly accessible web crawl
+* Very large dataset
+* HTML, plain-text, metadata available
+
+* To access the data: http://commoncrawl.org/the-data/get-started/
+</code></pre>
+
+<h3>Web Crawling</h3>
+
+<pre><code>* Very efficient automatic web browsing, and downloading
+* A little dangerous!
+</code></pre>
+
+<h4>Software</h4>
+
+<pre><code>* Heritrix
+* Nutch
+* StormCrawler
+* SpiredLing
+</code></pre>
+
+<h4>Rules</h4>
+
+<pre><code>* Obey robots.txt (https://en.wikipedia.org/wiki/Robots_exclusion_standard)
+* Be polite (http://blog.mischel.com/2011/12/20/writing-a-web-crawler-politeness/)
+</code></pre>
+
+<h4>Problems &amp; Challenges</h4>
+
+<pre><code>* URL mess
+* Content Mess
+* Link Loops
+* Link hell (calendaras etc.)
+* Spam crap
+* Danger posed by the Government!
+* JavaScript generated content
+* JavaScript Links
+* Declaring a proper content scope
+* Declaring a proper site content
+</code></pre>
+
+<h4>Configuration of the crawler</h4>
+
+<pre><code>* Very important, to minimize above problems
+</code></pre>
+
+<h4>Extending and customizing the crawler</h4>
+
+<pre><code>* Most of the modern crawlers are very modular and extendable
+</code></pre>
+
+<h4>Running the crawler</h4>
+
+<pre><code>* Requires supervision
+* Requires surprisingly much resources
+</code></pre>
+
+<h2>Web crawling with other approaches</h2>
+
+<pre><code>* http://webscraper.io/
+* Using a web driver
+</code></pre>
+
+<h2>Bonus: Gutenberg</h2>
+
+<pre><code>* http://www.gutenberg.org/wiki/Gutenberg%3aInformation_About_Robot_Access_to_our_Pages
+</code></pre>
+
+<h2>Plain text extraction</h2>
+
+<pre><code>1. HTML
+
+    * Beautiful soup
+    * JustText
+
+2. PDF
+
+    * pdf2text
+    * https://sourceforge.net/projects/pdfreflow/
+
+3. DOC(X)
+
+    * libreoffice --headless --convert-to txt:text mydocument.doc
+    * Sed black magic
+    ** unzip -p some.docx word/document.xml | sed -e 's/&lt;[^&gt;]\{1,\}&gt;//g; s/[^[:print:]]\{1,\}//g'
+</code></pre>
